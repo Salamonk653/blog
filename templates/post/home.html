@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{#    {% for post in posts %}#}
+{#        {{ post.created }}<br />#}
+{#        <a href="{% url 'post_single' id=post.id %}" > {{ post.title }} </a> <br />#}
+{#        <img src="{{ post.image.url }}" alt="foto" style="width: 400px; height: 280px;"> <br />#}
+{#        {{ post.text }}<br />#}
+{#        {% if post.hashtag_set.all|length > 0 %}#}
+{#            {% for teg in post.hashtag_set.all %}#}
+{#                <h1>{{ teg }}</h1>#}
+{#            {% endfor %}#}
+{##}
+{#        {% endif %}#}
+{#        <hr />#}
+{#    {% endfor %}#}
+
+
+    <h1>Публикации</h1>
+    {% if article_lists %}
+        {% for article in article_lists %}
+            <article>
+                <a href="{{ article.get_absolute_url }}">
+                    <h2>{{ article.title }}</h2>
+                </a>
+                <img src="{{ article.image.url }}" alt="foto" style="width: 400px; height: 280px;"> <br />#}
+                {{ article.text }}
+                <p><a class="btn btn-default btn-sm" href="{{ article.get_absolute_url }}">Читать далее</a></p>
+            </article>
+        {% endfor %}
+    {% endif %}
+{% load bootstrap3 %}
+{% bootstrap_pagination article_lists %}
+{% endblock content %}
+
+
+{% block page %}
+
+{% endblock %}

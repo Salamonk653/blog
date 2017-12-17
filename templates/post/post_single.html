@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    {{ post.created }}<br />
+    {{ post.title }}<br />
+    <img src="{{ post.image.url }}" alt="foto" style="width: 400px; height: 280px;"> <br />
+    {{ post.text }}<br />
+{% endblock content %}

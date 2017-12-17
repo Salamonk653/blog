@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load bootstrap3 %}
+
+{% load staticfiles %}
+{% bootstrap_css %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <title>Base</title>
+{#    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'%}">#}
+{#    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css'%}">#}
+{#    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>#}
+    <script src="{% static 'js/search.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/typahead.js' %}"></script>
+    <script src="{% static 'js/search_tag.js' %}"></script>
+    {% block head %}
+    {% endblock head%}
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+
+
+
+{#_________________FOOOTER_____________#}
+    {% block footer %}
+
+    {% endblock footer %}
+</body>
+</html>
